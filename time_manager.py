@@ -14,14 +14,14 @@ client = TelegramClient(username, int(api_id), api_hash)
 while True:
     nw_day=datetime.today().strftime("%Y-%m-%d")
     day_before=(datetime.today() - timedelta(days=1)).strftime("%Y-%m-%d")
-    con = sqlite3.connect("vpn.db")
+    con = sqlite3.connect("ru_vpn.db")
     cur = con.cursor()
     cur.execute('select * from dates where napomni=(?) ',[nw_day])
     object=cur.fetchall()
     con.commit()
     if len(object)==0:
         print(nw_day,day_before)
-        con = sqlite3.connect("vpn.db")
+        con = sqlite3.connect("ru_vpn.db")
         cur = con.cursor()
         cur.execute('select * from users')
         con.commit()
@@ -31,7 +31,7 @@ while True:
             time.sleep(2)
             if i[3]==nw_day:
                 client.start(phone=str(phone))
-                client.send_message('god_vpn_bot',str(i[0]))
+                client.send_message('russ_vpn_bot',str(i[0]))
                 client.disconnect()
                 print('send',i[0])
             elif i[3]==day_before:
