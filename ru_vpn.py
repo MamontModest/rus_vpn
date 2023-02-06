@@ -145,15 +145,15 @@ async def cmd_start(callback: types.CallbackQuery):
 async def cmd_start(message: types.Message):
     builder = types.ReplyKeyboardMarkup(resize_keyboard=True)
     builder.row(types.InlineKeyboardButton(
-        text="Месяц  - 149 рублей",
+        text="Месяц  - 149 рублей 🇷🇺",
         callback_data="first")
     )
     builder.insert(types.InlineKeyboardButton(
-        text="3 Месяца - 349 рублей",
+        text="3 Месяца - 349 рублей 🇷🇺",
         callback_data="second")
     )
     builder.row(types.InlineKeyboardButton(
-        text="Целый год - 999 рублей",
+        text="Целый год - 999 рублей 🇷🇺",
         callback_data="third")
     )
     builder.add(types.KeyboardButton(
