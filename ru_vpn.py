@@ -32,7 +32,7 @@ async def cmd_start(message: types.Message):
             callback_data="try_yes")
         )
         builder.add(types.InlineKeyboardButton(
-            text='Нет-хочу сразу купить тариф.',
+            text='Нет-хочу сразу купить тариф. 🇷🇺',
             callback_data='tariffs'))
         await message.answer(
             text="Здравствуйте!\nРад что Вы обратились ко мне. Вам доступен бесплатный тестовый доступ на 2 дня,\nхотите попробовать?",reply_markup=builder
@@ -120,15 +120,15 @@ async def cmd_start(callback: types.CallbackQuery):
         await callback.message.answer('Ваш пробный период активирован, осталось 48 часов\nКлюч можно получить в Главном меню / Мой ключ')
     builder = types.ReplyKeyboardMarkup(resize_keyboard=True)
     builder.row(types.InlineKeyboardButton(
-        text="Месяц  - 149 рублей",
+        text="Месяц  - 149 рублей 🇷🇺",
         callback_data="first")
     )
     builder.insert(types.InlineKeyboardButton(
-        text="3 Месяца - 349 рублей",
+        text="3 Месяца - 349 рублей 🇷🇺",
         callback_data="second")
     )
     builder.row(types.InlineKeyboardButton(
-        text="Целый год - 999 рублей",
+        text="Целый год - 999 рублей 🇷🇺",
         callback_data="third")
     )
     builder.add(types.KeyboardButton(
@@ -246,7 +246,7 @@ async def cmd_start(message: types.Message):
 
 
 
-@dp.message_handler(text="Месяц  - 149 рублей")
+@dp.message_handler(text="Месяц  - 149 рублей 🇷🇺")
 async def cmd_start(message: types.Message):
     uid=message.from_user.id
     if   chek_platej(uid):
@@ -286,7 +286,7 @@ async def cmd_start(message: types.Message):
 
 
 
-@dp.message_handler(text="3 Месяца - 349 рублей")
+@dp.message_handler(text="3 Месяца - 349 рублей 🇷🇺")
 async def cmd_start(message: types.Message):
     uid = message.from_user.id
     if chek_platej(uid):
@@ -328,7 +328,7 @@ async def cmd_start(message: types.Message):
 
 
 
-@dp.message_handler(text="Целый год - 999 рублей")
+@dp.message_handler(text="Целый год - 999 рублей 🇷🇺")
 async def cmd_start(message: types.Message):
     uid = message.from_user.id
     if chek_platej(uid):
