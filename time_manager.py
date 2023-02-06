@@ -37,7 +37,7 @@ while True:
             elif i[3]==day_before:
                 data_limit(i[2],0)
                 print('done',i[0])
-        con = sqlite3.connect("vpn.db")
+        con = sqlite3.connect("ru_vpn.db")
         cur = con.cursor()
         cur.execute('insert into dates values(?,?)',[nw_day,day_before])
         con.commit()
